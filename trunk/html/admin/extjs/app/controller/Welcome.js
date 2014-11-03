@@ -20,7 +20,7 @@ Ext.define('CMS.controller.Welcome', {
     //应用程序加载完成之后，Viewport创建之前触发
     init: function() {
         this.control({
-            'systemmenuslist': {
+            'menuslist': {
                 itemmousedown: this.createPanel
             }
         });

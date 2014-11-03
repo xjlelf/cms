@@ -30,4 +30,25 @@ App::uses('Model', 'Model');
  * @package       app.Model
  */
 class AppModel extends Model {
+
+    /** 模型行为 */
+    public $actsAs = array('Auth');
+
+    /**
+     * 模糊查询设置
+     *
+     * @param $value
+     * @param bool $left
+     * @param bool $right
+     * @return string
+     */
+    public function selectLike($value, $left = true, $right = true) {
+        if ($left) {
+            $value = '%' . $value;
+        }
+        if ($right) {
+            $value = $value . '%';
+        }
+        return $value;
+    }
 }

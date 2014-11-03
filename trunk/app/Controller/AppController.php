@@ -33,5 +33,5 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
 
     /** 引用组件 */
-    public $components = array('Session', 'Auth');
+    public $components = array('Session', 'Auth', 'Paginator');
 }

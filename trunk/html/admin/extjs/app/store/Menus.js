@@ -20,13 +20,28 @@ Ext.define('CMS.store.Menus', {
             }]
         }, {
             id: 2,
-            text: '会员管理',
+            text: '产品管理',
             children: [{
                 id: 21,
-                text: '会员一览',
-                controller: 'Users',
+                text: '产品一览',
+                controller: 'Products',
+                url: 'productslist',
                 leaf: 1
             }]
         }]
-    }
+    },
+
+    fields: [{
+        name: 'id',
+        type: 'int'
+    }, {
+        name: 'text',
+        type: 'string'
+    }, {
+        name: 'controller',
+        type: 'string'
+    }, {
+        name: 'url',
+        type: 'string'
+    }]
 });

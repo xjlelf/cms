@@ -15,7 +15,8 @@ Ext.define('/html.admin.extjs.app.config.constdefine', {
         CONTROLLER: {
             MENUS: '菜单',
             MANAGERS: '管理员',
-            MANAGERTYPES: '管理员角色'
+            MANAGERTYPES: '管理员角色',
+            PRODUCTS: '产品'
         },
 
         // 行为
@@ -28,6 +29,31 @@ Ext.define('/html.admin.extjs.app.config.constdefine', {
             CONTROL: '权限分配',
             HISTORY_LIST: '历史列表'
         }
+    },
+
+    //产品参数
+    PRODUCTS: {
+        STATUS_0: 0,
+        STATUS_1: 1,
+
+        STANDARD_1: 1,
+        STANDARD_2: 2
+    },
+
+    //获取产品状态参数
+    GET_PRODUCTS_STATUS: function() {
+        var PRODUCTS_STATUS = {};
+        PRODUCTS_STATUS[this.PRODUCTS.STATUS_0] = '下架';
+        PRODUCTS_STATUS[this.PRODUCTS.STATUS_1] = '正常';
+        return PRODUCTS_STATUS;
+    },
+
+    //获取产品规格参数
+    GET_PRODUCTS_STANDARD: function() {
+        var PRODUCTS_STANDARD = {};
+        PRODUCTS_STANDARD[this.PRODUCTS.STANDARD_1] = '千克/桶';
+        PRODUCTS_STANDARD[this.PRODUCTS.STANDARD_2] = '千克/包';
+        return PRODUCTS_STANDARD;
     },
 
     //去掉所有的html标记
