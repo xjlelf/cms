@@ -38,6 +38,23 @@ class AdminAppController extends AppController {
      * 控制器结束后执行
      * */
     public function beforeRender() {
+        $sources = ConnectionManager::sourceList();
+        $sqlLogs = array();
+        foreach ($sources as $source) {
+            $db = ConnectionManager::getDataSource($source);
+            if (!method_exists($db, 'getLog')) {
+                continue;
+            }
+            $sqls = $db->getLog();
+            foreach ($sqls as $sql) {
+                if (is_array($sql)) {
+                    foreach ($sql as $v) {
+                        $sqlLogs[] = $v;
+                    }
+                }
+            }
+        }
+        $this->viewVars['data']['sqlLogs'] = $sqlLogs;
         $this->set('title', $this->title);
         if ($this->layout === 'ajax') {
             $this->view = '/Admin/ajax';

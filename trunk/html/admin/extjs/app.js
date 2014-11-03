@@ -29,3 +29,15 @@ var ConstDefine = Ext.create('/html.admin.extjs.app.config.constdefine');
         });
     }
 });
+
+//获取后台访问数据的SQL数据
+Ext.Ajax.on('requestcomplete', function(conn, response, options, eOpts) {
+    if (!Ext.isEmpty(response.responseText)) {
+        var text = Ext.JSON.decode(response.responseText),
+            sql = text.sqlLogs;
+        var sqlList = Ext.getCmp('sql');
+        if (!Ext.isEmpty(sqlList)) {
+            sqlList.setData(sql);
+        }
+    }
+});
