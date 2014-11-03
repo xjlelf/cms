@@ -105,3 +105,16 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+
+App::build(
+    array(
+        'Controller' => array(
+            ROOT.DS.APP_DIR.DS.'Controller'.DS.'Admin'.DS,
+            ROOT.DS.APP_DIR.DS.'Controller'.DS,
+        ),
+        'View' => array(
+            ROOT.DS.APP_DIR.DS.'View'.DS.'Admin'.DS,
+            ROOT.DS.APP_DIR.DS.'View'.DS,
+        )
+    )
+);
