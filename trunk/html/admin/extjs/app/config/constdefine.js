@@ -17,7 +17,11 @@ Ext.define('/html.admin.extjs.app.config.constdefine', {
             MANAGERS: '管理员',
             MANAGERTYPES: '管理员角色',
             CUSTOMERS: '客户',
-            PRODUCTS: '产品'
+            PRODUCTS: '产品',
+            ORDERS: '订单',
+            STOCKS: '库存',
+            STOCKIN: '入库单',
+            STOCKOUT: '销售单'
         },
 
         // 行为
@@ -82,6 +86,39 @@ Ext.define('/html.admin.extjs.app.config.constdefine', {
         CUSTOMERS_TYPE[this.CUSTOMERS.TYPE_2] = '买家';
         CUSTOMERS_TYPE[this.CUSTOMERS.TYPE_3] = '交易伙伴';
         return CUSTOMERS_TYPE;
+    },
+
+    //订单参数
+    ORDERS: {
+        TYPE_1: 1,
+        TYPE_2: 2,
+        TYPE_3: 3,
+        TYPE_4: 4,
+
+        LAST_STATUS_0: 0,
+        LAST_STATUS_1: 1,
+        LAST_STATUS_2: 2,
+        LAST_STATUS_3: 3
+    },
+
+    //获取订单类型参数
+    GET_ORDERS_TYPE: function() {
+        var ORDERS_TYPE = {};
+        ORDERS_TYPE[this.ORDERS.TYPE_1] = '入库单';
+        ORDERS_TYPE[this.ORDERS.TYPE_2] = '销售单';
+        ORDERS_TYPE[this.ORDERS.TYPE_3] = '报损单';
+        ORDERS_TYPE[this.ORDERS.TYPE_4] = '报溢单';
+        return ORDERS_TYPE;
+    },
+
+    //获取订单状态参数
+    GET_ORDERS_LAST_STATUS: function() {
+        var ORDERS_LAST_STATUS = {};
+        ORDERS_LAST_STATUS[this.ORDERS.LAST_STATUS_0] = '订单生成';
+        ORDERS_LAST_STATUS[this.ORDERS.LAST_STATUS_1] = '产品入库';
+        ORDERS_LAST_STATUS[this.ORDERS.LAST_STATUS_2] = '产品出库';
+        ORDERS_LAST_STATUS[this.ORDERS.LAST_STATUS_3] = '资金入账';
+        return ORDERS_LAST_STATUS;
     },
 
     //去掉所有的html标记

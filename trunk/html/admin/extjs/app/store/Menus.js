@@ -38,6 +38,38 @@ Ext.define('CMS.store.Menus', {
                 url: 'customerslist',
                 leaf: 1
             }]
+        }, {
+            id: 4,
+            text: '订单管理',
+            children: [{
+                id: 41,
+                text: '订单一览',
+                controller: 'Orders',
+                url: 'orderslist',
+                leaf: 1
+            }, {
+                id: 42,
+                text: '入库单',
+                controller: 'Orders',
+                url: 'ordersstockin',
+                leaf: 1
+            }, {
+                id: 43,
+                text: '销售单',
+                controller: 'Orders',
+                url: 'ordersstockout',
+                leaf: 1
+            }]
+        }, {
+            id: 5,
+            text: '库存管理',
+            children: [{
+                id: 51,
+                text: '库存一览',
+                controller: 'Stocks',
+                url: 'stockslist',
+                leaf: 1
+            }]
         }]
     },
 

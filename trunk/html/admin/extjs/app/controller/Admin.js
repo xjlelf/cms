@@ -155,5 +155,18 @@ Ext.define('CMS.controller.Admin', {
                 }
             }
         });
+    },
+
+    //显示订单详情
+    showOrderDetail: function(record) {
+        var tabpanel = this.showPanel('ordersdetail', Ext.getCmp('main'), 'ordersdetail' + record.data.order),
+            form = tabpanel.down('form'),
+            detail = form.getComponent('detail');
+        tabpanel.setTitle(ConstDefine.GET_ORDERS_TYPE()[record.data.type] + ' ' + record.data.order);
+        form.getComponent('customer').getStore().load();
+        tabpanel.down('form').loadRecord(record);
+        detail.getStore().load({
+            params: {'order': record.data.order}
+        });
     }
 });
