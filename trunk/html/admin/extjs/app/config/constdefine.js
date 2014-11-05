@@ -16,6 +16,7 @@ Ext.define('/html.admin.extjs.app.config.constdefine', {
             MENUS: '菜单',
             MANAGERS: '管理员',
             MANAGERTYPES: '管理员角色',
+            CUSTOMERS: '客户',
             PRODUCTS: '产品'
         },
 
@@ -54,6 +55,33 @@ Ext.define('/html.admin.extjs.app.config.constdefine', {
         PRODUCTS_STANDARD[this.PRODUCTS.STANDARD_1] = '千克/桶';
         PRODUCTS_STANDARD[this.PRODUCTS.STANDARD_2] = '千克/包';
         return PRODUCTS_STANDARD;
+    },
+
+    //客户参数
+    CUSTOMERS: {
+        STATUS_0: 0,
+        STATUS_1: 1,
+
+        TYPE_1: 1,
+        TYPE_2: 2,
+        TYPE_3: 3
+    },
+
+    //获取客户状态参数
+    GET_CUSTOMERS_STATUS: function() {
+        var CUSTOMERS_STATUS = {};
+        CUSTOMERS_STATUS[this.CUSTOMERS.STATUS_0] = '断绝';
+        CUSTOMERS_STATUS[this.CUSTOMERS.STATUS_1] = '正常';
+        return CUSTOMERS_STATUS;
+    },
+
+    //获取客户类型参数
+    GET_CUSTOMERS_TYPE: function() {
+        var CUSTOMERS_TYPE = {};
+        CUSTOMERS_TYPE[this.CUSTOMERS.TYPE_1] = '卖家';
+        CUSTOMERS_TYPE[this.CUSTOMERS.TYPE_2] = '买家';
+        CUSTOMERS_TYPE[this.CUSTOMERS.TYPE_3] = '交易伙伴';
+        return CUSTOMERS_TYPE;
     },
 
     //去掉所有的html标记

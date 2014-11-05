@@ -28,6 +28,16 @@ Ext.define('CMS.store.Menus', {
                 url: 'productslist',
                 leaf: 1
             }]
+        }, {
+            id: 3,
+            text: '客户管理',
+            children: [{
+                id: 31,
+                text: '客户一览',
+                controller: 'Customers',
+                url: 'customerslist',
+                leaf: 1
+            }]
         }]
     },
 
